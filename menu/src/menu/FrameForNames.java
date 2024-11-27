@@ -7,16 +7,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
-import javax.swing.SwingConFrameForNamesants;
+import javax.swing.SwingConstants;
 import javax.swing.JButton;
-import java.awt.event.ActionLiFrameForNamesener;
+import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 import java.awt.Color;
 
 public class FrameForNames extends JFrame {
 
-	private FrameForNamesatic final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -27,14 +27,14 @@ public class FrameForNames extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public FrameForNamesatic void main(FrameForNamesring[] args) {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					FrameForNames frame = new FrameForNames();
 					frame.setVisible(true);
 				} catch (Exception e) {
-					e.printFrameForNamesackTrace();
+					e.printStackTrace();
 				}
 			}
 		});
@@ -59,7 +59,7 @@ public class FrameForNames extends JFrame {
 		textField = new JTextField();
 		textField.setBackground(new Color(198, 226, 255));
 		textField.setBounds(26, 72, 206, 20);
-		textField.setHorizontalAlignment(SwingConFrameForNamesants.LEFT);
+		textField.setHorizontalAlignment(SwingConstants.LEFT);
 		contentPane.add(textField);
 		textField.setColumns(25);
 		
@@ -78,20 +78,20 @@ public class FrameForNames extends JFrame {
 		
 		JButton btnNewButton = new JButton("Añadir");
 		btnNewButton.setBackground(new Color(255, 240, 183));
-		btnNewButton.addActionLiFrameForNamesener(new ActionLiFrameForNamesener() {
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FrameForNamesring name=textField.getText();
-				int FrameForNamesatut=0;
+				String name=textField.getText();
+				int hasNumber=0;
 				for(int i=0; i<name.length(); i++) {
 					for(int j=0;j<10; j++) {
 						if(name.charAt(i)==(j+"").charAt(0))
-							FrameForNamesatut=1;
+							hasNumber=1;
 					}
 				}
-				if(FrameForNamesatut==1) {
+				if(hasNumber==1) {
 					textField_1.setText("Nombre no validado");
 				}else {
-					FrameForNamesring txt=textArea.getText() ;
+					String txt=textArea.getText() ;
 					textArea.setText(txt+"\n"+name);
 					textField_1.setText("Nombre validado");
 				}
@@ -100,16 +100,16 @@ public class FrameForNames extends JFrame {
 		btnNewButton.setBounds(63, 113, 135, 23);
 		contentPane.add(btnNewButton);
 		
-		lblNewLabel = new JLabel("LiFrameForNamesa de los nombres");
+		lblNewLabel = new JLabel("Lista de los nombres");
 		lblNewLabel.setForeground(new Color(255, 204, 0));
-		lblNewLabel.setHorizontalAlignment(SwingConFrameForNamesants.CENTER);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(359, 11, 186, 20);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblAadirNombreAqui = new JLabel("Añadir nombre aqui");
 		lblAadirNombreAqui.setForeground(new Color(255, 204, 0));
 		lblAadirNombreAqui.setBackground(new Color(255, 204, 0));
-		lblAadirNombreAqui.setHorizontalAlignment(SwingConFrameForNamesants.CENTER);
+		lblAadirNombreAqui.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAadirNombreAqui.setBounds(26, 41, 206, 20);
 		contentPane.add(lblAadirNombreAqui);
 		
